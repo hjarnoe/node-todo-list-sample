@@ -1,0 +1,17 @@
+{
+  "name": "todo-list-sample",
+  "version": "1.0.0",
+  "description": "Node.JS Todo List Tutorial",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "author": "OhhhDEV / Hjarnoe",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
