@@ -4,7 +4,7 @@
   "description": "Node.JS Todo List Tutorial",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js"
+    "test": "node app.js"
   },
   "author": "OhhhDEV / Hjarnoe",
   "license": "ISC",
@@ -12,7 +12,4 @@
     "lodash": "^4.17.20",
     "yargs": "^16.1.1"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.6"
-  }
 }

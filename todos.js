@@ -10,7 +10,6 @@ const addTodo = (title) => {
 	};
 	
 	let duplicatetodos = todos.filter((todo) => todo.title === title);
-	
 	if (duplicatetodos.length === 0) {
 		todos.push(todo);
 		saveTodos(todos);
@@ -23,7 +22,6 @@ const deleteTodo = (title) => {
 	let todos = fetchTodos();
 	let filteredtodos = todos.filter((todo) => todo.title !== title);
 	saveTodos(filteredtodos);
-	
 	return todos.length !== filteredtodos.length;
 };
 
@@ -32,11 +30,15 @@ const readTodo = (title) => {
 	let todos = fetchTodos();
 	let filteredtodos = todos.filter((todo) => todo.title === title);
 	return filteredtodos[0];
-}
+};
+
+// List all todo items
+const listTodos = () => {
+	return fetchTodos();
+};
 
 // Utility functions
 const fetchTodos = () => {
-	
 	try {
 		let todosString = fs.readFileSync('todos-data.json');
 		return JSON.parse(todosString);
@@ -58,5 +60,6 @@ module.exports = {
 	addTodo,
 	deleteTodo,
 	readTodo,
-	logTodo
+	logTodo,
+	listTodos
 };
