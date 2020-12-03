@@ -27,6 +27,13 @@ const deleteTodo = (title) => {
 	return todos.length !== filteredtodos.length;
 };
 
+// Read a todo item
+const readTodo = (title) => {
+	let todos = fetchTodos();
+	let filteredtodos = todos.filter((todo) => todo.title === title);
+	return filteredtodos[0];
+}
+
 // Utility functions
 const fetchTodos = () => {
 	
@@ -42,7 +49,14 @@ const saveTodos = (todos) => {
 	fs.writeFileSync('todos-data.json', JSON.stringify(todos));
 };
 
+const logTodo = (todo) => {
+	console.log('------');
+	console.log(`It's title is: ${todo.title}`);
+};
+
 module.exports = {
 	addTodo,
-	deleteTodo
+	deleteTodo,
+	readTodo,
+	logTodo
 };
